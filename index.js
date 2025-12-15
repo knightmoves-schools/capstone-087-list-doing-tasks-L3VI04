@@ -1,3 +1,4 @@
+
 let tasks = [
     {description: 'pack spikes for track meet', status: 'todo'}, 
     {description: 'make my bed', status: 'todo'}, 
@@ -22,7 +23,9 @@ function drawTodoCards(){
     let output = '';
     
     tasks.forEach((task, index) => {
-        output += drawCard(index, task)
+        if(task.status === 'todo'){
+            output += drawCard(index, task)
+        }
     });
     
     return output;
@@ -32,11 +35,13 @@ function drawDoingCards(){
     let output = '';
     
     tasks.forEach((task, index) => {
-        output += drawCard(index, task)
+        if(task.status === 'doing'){
+            output += drawCard(index, task)
+        }
     });
     
     return output;
 }
-
+    
 document.getElementById('todo-cards').innerHTML = drawTodoCards();
 document.getElementById('doing-cards').innerHTML = drawDoingCards();

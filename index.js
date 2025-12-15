@@ -1,4 +1,3 @@
-
 let tasks = [
     {description: 'pack spikes for track meet', status: 'todo'}, 
     {description: 'make my bed', status: 'todo'}, 
